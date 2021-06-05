@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(26, 24, 24);
+  color: #ffffff;
+}
+
+.add-note {
+  position: relative;
+  width: 15rem;
+  font-size: 3rem;
+  margin: 2rem auto;
+  background-color: cadetblue;
+  color: #000000;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+.add-note:hover {
+  opacity: 0.7;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+h1 {
+  position: relative;
+  text-align: center;
+}
+.modal {
+  position: fixed;
+  margin: 25rem 27%;
+  padding: 1.5rem;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+  border: 1px solid black;
+  transition: 0.8s ease-in-out;
+  border-radius: 0.5rem;
+}
+.modal:target {
+  opacity: 1;
+  margin-top: 5rem;
+  pointer-events: auto;
+  background-color: grey;
+}
+.modal-content {
+  width: 60rem;
+  position: relative;
+  margin: 2rem auto;
+  border: 1px solid rgba(0, 0, 0, 0.392);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: black;
+  font-size: 2rem;
+}
+input {
+  width: 100%;
+  height: 4rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  color: black;
+}
+
+.cancel,
+.submit {
+  text-align: center;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.cancel:hover,
+.submit:hover {
+  background-color: red;
+}
+
+.note-table {
+  position: relative;
+  width: 80%;
+  margin: 4rem auto;
+  background: #000000b7;
+  border-radius: 0.5rem;
+}
+.header {
+  font-size: 4rem;
+  color: rgb(133, 251, 255);
+  padding: 1rem;
+}
+
+.header-title {
+  color: red;
+  font-size: 2rem;
+  text-decoration: underline;
+  padding: 2rem;
+}
+
+.header-note {
+  color: rgb(255, 255, 255);
+  font-size: 1.8rem;
+}
+
+.noteItem {
+  height: 4rem;
+  z-index: 1;
+}
+
+.noteItem:hover {
+  opacity: 0.5;
+}
+
+td {
+  padding: 1rem;
+}
+.delete-item {
+  font-size: 3rem;
+  text-align: center;
+}
+.delete-item:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* MEDIA RESPONSIVE */
+/*font-size: 62,5%; 1 rem = 10px tab landscape 
+  font-size: 56, 25%; 1 rem = 9px tab portrait 
+  font-size:50 %; 1 rem = 8px  tab landscape 
+  font-size: 75%; 1 rem = 12px big desktop 
+
+  /*BIG DESKTOP*/
+
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 75%;
+  }
+  .add-note {
+    width: 25rem;
+    font-size: 5rem;
+    text-align: center;
+  }
+
+  .modal {
+    margin: 25rem 30%;
+  }
+  .modal-content {
+    width: 80rem;
+    font-size: 3rem;
+  }
+
+  .cancel,
+  .submit {
+    font-size: 3rem;
+  }
+
+  .header-title {
+    font-size: 4rem;
+  }
+
+  .header-note {
+    font-size: 3.5rem;
+  }
+
+  .delete-item {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+  body {
+    height: fit-content;
+  }
+  .note-table {
+    margin: 0 auto;
+  }
+
+  .add-note {
+    width: 25rem;
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .modal {
+    margin: 25rem 30%;
+  }
+  .modal-content {
+    width: 50rem;
+    font-size: 2rem;
+  }
+
+  .modal-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .cancel,
+  .submit {
+    font-size: 2rem;
+  }
+
+  .header-title {
+    font-size: 3rem;
+  }
+
+  .header-note {
+    font-size: 2.5rem;
+  }
+
+  .delete-item {
+    font-size: 3rem;
+  }
+}
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+
+  .add-note {
+    width: 18rem;
+  }
+
+  .modal-content {
+    width: 40rem;
+    font-size: 2rem;
+  }
+
+  .modal-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .cancel,
+  .submit {
+    font-size: 2rem;
+  }
+
+  .header-title {
+    font-size: 3rem;
+  }
+
+  .header-note {
+    font-size: 2.5rem;
+  }
+
+  .delete-item {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 43.75%;
+  }
+
+  .add-note {
+    width: 10rem;
+    font-size: 1.8rem;
+  }
+
+  .modal-content {
+    width: 25rem;
+    font-size: 1.5rem;
+  }
+
+  .modal-content h1 {
+    font-size: 2rem;
+  }
+
+  .cancel,
+  .submit {
+    font-size: 1.5rem;
+  }
+
+  .header-title {
+    font-size: 1.6rem;
+  }
+
+  .header-note {
+    font-size: 1.4rem;
+  }
+
+  .delete-item {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 37.25%;
+  }
+
+  .add-note {
+    width: 10rem;
+    font-size: 1rem;
+  }
+  input {
+    height: 2rem;
+  }
+
+  .modal-content {
+    width: 15rem;
+    font-size: 1rem;
+  }
+
+  .modal-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .cancel,
+  .submit {
+    font-size: 1rem;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .header-note {
+    font-size: 1rem;
+  }
+
+  .delete-item {
+    font-size: 1rem;
+  }
+}
